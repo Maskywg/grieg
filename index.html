@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>葛利格：卑爾根的峽灣之子與他的音樂</title>
+<style>
+  :root{
+    --fjord-green:#1f3d33;
+    --fjord-green-deep:#12261f;
+    --gold:#c9982f;
+    --gold-deep:#a67a1e;
+    --cream:#f3efe1;
+    --paper:#faf7ee;
+    --ink:#231f1a;
+    --ink-soft:#544d3f;
+    --line:#ddd3ba;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Noto Serif TC","PMingLiU","Songti TC",serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+  }
+  .hero{
+    position:relative;
+    padding:7rem 1.5rem 5rem;
+    text-align:center;
+    background:
+      linear-gradient(180deg, rgba(18,38,31,.55), rgba(18,38,31,.82)),
+      url('images/hero-bergen_20260729_154755.png') center/cover no-repeat;
+    color:#f6efd9;
+  }
+  .hero .eyebrow{
+    letter-spacing:.35em;
+    font-size:.8rem;
+    text-transform:uppercase;
+    color:#e7cd8f;
+    margin-bottom:1.2rem;
+  }
+  .hero h1{
+    font-size:clamp(1.9rem, 4.5vw, 3.1rem);
+    margin:0 0 1rem;
+    font-weight:700;
+    text-shadow:0 2px 12px rgba(0,0,0,.4);
+  }
+  .hero p{
+    max-width:640px;
+    margin:0 auto;
+    font-size:1.05rem;
+    color:#ece0c2;
+  }
+  .hero .dates{
+    margin-top:1.6rem;
+    font-size:.95rem;
+    letter-spacing:.08em;
+    color:#d8c78f;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 1.5rem;}
+
+  nav.toc{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    padding:1rem 0;
+    position:sticky; top:0; z-index:10;
+    overflow-x:auto;
+  }
+  nav.toc ul{
+    display:flex;
+    gap:1.6rem;
+    list-style:none;
+    margin:0; padding:0 1.5rem;
+    max-width:880px;
+    margin:0 auto;
+    white-space:nowrap;
+  }
+  nav.toc a{
+    color:var(--fjord-green-deep);
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:600;
+    border-bottom:2px solid transparent;
+    padding-bottom:.3rem;
+  }
+  nav.toc a:hover{border-bottom-color:var(--gold);}
+
+  section{padding:4.5rem 0;}
+  section.alt{background:var(--cream);}
+  section .wrap > .tag{
+    display:inline-block;
+    font-size:.78rem;
+    letter-spacing:.2em;
+    color:var(--gold-deep);
+    font-weight:700;
+    margin-bottom:.8rem;
+  }
+  h2{
+    font-size:clamp(1.4rem,3vw,1.9rem);
+    color:var(--fjord-green-deep);
+    margin:0 0 1.4rem;
+    border-left:6px solid var(--fjord-green);
+    padding-left:.7rem;
+  }
+  h3{
+    color:var(--gold-deep);
+    font-size:1.15rem;
+    margin:2rem 0 .8rem;
+  }
+  p{margin:0 0 1.1rem; color:var(--ink-soft);}
+  strong{color:var(--ink);}
+  a{color:var(--fjord-green-deep);}
+
+  figure{margin:2rem 0;}
+  figure img{
+    width:100%;
+    border-radius:10px;
+    display:block;
+    box-shadow:0 10px 30px rgba(18,38,31,.2);
+  }
+  figcaption{
+    font-size:.85rem;
+    color:#8a7a5c;
+    text-align:center;
+    margin-top:.6rem;
+    font-style:italic;
+  }
+
+  .callout{
+    background:linear-gradient(135deg, #fff, var(--cream));
+    border:1px solid var(--line);
+    border-left:5px solid var(--gold);
+    border-radius:8px;
+    padding:1.3rem 1.5rem;
+    margin:1.8rem 0;
+  }
+  .callout p{margin:0; color:var(--ink);}
+  .callout .label{
+    font-weight:700;
+    color:var(--gold-deep);
+    font-size:.85rem;
+    letter-spacing:.1em;
+    margin-bottom:.4rem;
+    display:block;
+  }
+
+  .timeline{
+    margin:2rem 0;
+    border-left:2px solid var(--line);
+    padding-left:1.4rem;
+  }
+  .timeline .item{margin-bottom:1.4rem;}
+  .timeline .year{
+    font-weight:700;
+    color:var(--fjord-green-deep);
+    display:block;
+    margin-bottom:.2rem;
+  }
+
+  .listen-card{
+    background:var(--fjord-green-deep);
+    border-radius:14px;
+    padding:1.6rem 1.6rem 1.8rem;
+    margin:1.8rem 0;
+    color:#f3efe1;
+  }
+  .listen-card h4{
+    margin:0 0 .3rem;
+    font-size:1.15rem;
+    color:#f0deac;
+  }
+  .listen-card .meta{
+    font-size:.85rem;
+    color:#c9d8cf;
+    margin-bottom:1rem;
+  }
+  .listen-card .movements{
+    font-size:.85rem;
+    color:#dfe8e2;
+    margin:0 0 1rem;
+    padding-left:1.1rem;
+  }
+  .video-wrap{
+    position:relative;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
+    border-radius:8px;
+    background:#000;
+  }
+  .video-wrap iframe{
+    position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:1.8rem 0;
+    font-size:.95rem;
+  }
+  th,td{
+    padding:.8rem 1rem;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+  }
+  th{
+    background:var(--fjord-green);
+    color:#f3efe1;
+    font-weight:600;
+  }
+  tr:nth-child(even){background:#00000005;}
+
+  footer{
+    padding:3rem 1.5rem 4rem;
+    text-align:center;
+    background:var(--ink);
+    color:#c9baa0;
+    font-size:.85rem;
+  }
+  footer a{color:#e7cd8f;}
+  .disclaimer{
+    max-width:880px;margin:0 auto 2rem;
+    font-size:.78rem;
+    color:#8a7a5c;
+    background:var(--cream);
+    border:1px dashed var(--line);
+    border-radius:8px;
+    padding:1rem 1.3rem;
+  }
+  .btn-link{
+    display:inline-block;
+    margin-top:.3rem;
+    padding:.6rem 1.1rem;
+    background:var(--gold);
+    color:#241d0d;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:700;
+    font-size:.9rem;
+  }
+  .btn-link:hover{background:var(--gold-deep); color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">EDVARD GRIEG · 1843–1907 · BERGEN, NORWAY</div>
+  <h1>卑爾根的峽灣之子<br>葛利格與他的挪威之聲</h1>
+  <p>他一生幾乎沒有離開過卑爾根太久，卻讓全世界記住了「山大王的宮殿」與清晨陽光灑落峽灣的樣子。這是關於這位挪威民族樂派作曲家、他的代表作，以及他湖畔小屋的故事。</p>
+  <div class="dates">Edvard Hagerup Grieg · 1843 年 6 月 15 日－1907 年 9 月 4 日</div>
+</div>
+
+<nav class="toc">
+  <ul>
+    <li><a href="#intro">卑爾根之子</a></li>
+    <li><a href="#life">生平與轉折</a></li>
+    <li><a href="#peergynt">皮爾金組曲</a></li>
+    <li><a href="#concerto">a小調鋼琴協奏曲</a></li>
+    <li><a href="#violin">小提琴奏鳴曲</a></li>
+    <li><a href="#troldhaugen">Troldhaugen 博物館</a></li>
+    <li><a href="#legacy">遺產</a></li>
+  </ul>
+</nav>
+
+<div class="wrap disclaimer" style="margin-top:2rem;">
+  說明：本頁文字整理自公開的生平與音樂史資料；文中插圖為 AI 生成之情境示意圖，並非特定歷史場景的實際照片。文末內嵌之影音為 YouTube 公開搜尋結果播放清單，非本站上傳內容。
+</div>
+
+<section id="intro">
+  <div class="wrap">
+    <span class="tag">01 · 為什麼是卑爾根</span>
+    <h2>挪威最重要的作曲家，出生在這座峽灣港城</h2>
+    <p><strong>愛德華・葛利格（Edvard Hagerup Grieg）</strong>1843 年出生於挪威西岸的卑爾根，家族原姓 Greig，祖先是 18 世紀從蘇格蘭亞伯丁移居挪威的商人——這也是為什麼他的姓氏拼法看起來不太像典型的挪威文。</p>
+    <p>葛利格終其一生對卑爾根與挪威西部的峽灣風景懷有深厚感情，即使赴德國萊比錫音樂院留學、也曾旅居丹麥哥本哈根，晚年仍選擇回到卑爾根近郊的湖畔別墅 Troldhaugen 定居、創作，並在此度過人生最後的二十多年。他被公認為 19 世紀「民族樂派（musical nationalism）」最重要的代表人物之一，把挪威民間音樂的調式、節奏與峽灣地景的意象，寫進了浪漫主義的和聲語言裡。</p>
+    <figure>
+      <img src="images/hero-bergen_20260729_154755.png" alt="卑爾根峽灣與彩色木屋城市景觀示意圖">
+      <figcaption>卑爾根：木造彩色房屋沿峽灣而建，是葛利格一生情感的根據地（示意圖）</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="life" class="alt">
+  <div class="wrap">
+    <span class="tag">02 · 生平</span>
+    <h2>從神童到「挪威音樂之父」</h2>
+    <div class="timeline">
+      <div class="item">
+        <span class="year">1858 年</span>
+        挪威小提琴家 <strong>Ole Bull</strong>（葛利格家族友人，也是當時歐洲知名的小提琴演奏家）發現 15 歲葛利格的音樂天分，說服他的父母將他送往德國<strong>萊比錫音樂院</strong>就讀，接受正統的德國浪漫主義音樂訓練。
+      </div>
+      <div class="item">
+        <span class="year">1863–1865 年</span>
+        移居丹麥哥本哈根，結識年輕的挪威作曲家 <strong>Rikard Nordraak</strong>（挪威國歌〈是的，我們熱愛這片土地〉的作曲者）。兩人一見如故，Nordraak 熱切的挪威民族主義理念深深影響了葛利格，促使他決心跳脫德式學院派風格，轉而挖掘挪威本土的民謠、舞曲與峽灣意象作為創作素材。Nordraak 隔年英年早逝，葛利格為他寫下了〈悼亡進行曲〉。
+      </div>
+      <div class="item">
+        <span class="year">1867 年</span>
+        與表妹、女高音 <strong>妮娜・哈格魯普（Nina Hagerup）</strong>結婚。妮娜是葛利格歌曲作品最重要的詮釋者，兩人的婚姻與音樂夥伴關係持續一生。
+      </div>
+      <div class="item">
+        <span class="year">1868 年</span>
+        完成了他唯一一首鋼琴協奏曲——<strong>a 小調鋼琴協奏曲</strong>，一舉成名。
+      </div>
+      <div class="item">
+        <span class="year">1874–1875 年</span>
+        受挪威劇作家<strong>亨里克・易卜生（Henrik Ibsen）</strong>之邀，為其詩劇《皮爾・金》（Peer Gynt）創作全本配樂，後來改編為兩套管絃樂組曲，成為葛利格流傳最廣的作品。
+      </div>
+      <div class="item">
+        <span class="year">1885 年</span>
+        葛利格夫婦在卑爾根近郊 Hop 湖畔完成別墅 <strong>Troldhaugen</strong>（意為「山妖之丘」）並定居於此，一直住到 1907 年過世。
+      </div>
+      <div class="item">
+        <span class="year">1907 年 9 月 4 日</span>
+        葛利格於卑爾根逝世，享年 64 歲。挪威為他舉行了近乎國葬規格的追悼儀式，遺體火化後安葬於 Troldhaugen 面湖的岩壁墓穴中。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="peergynt">
+  <div class="wrap">
+    <span class="tag">03 · 代表作 I</span>
+    <h2>皮爾金組曲：從戲劇配樂到音樂會經典</h2>
+    <p>易卜生的詩劇《皮爾・金》講述一個愛吹牛、貪婪又充滿幻想的挪威農村青年皮爾・金，離鄉遊蕩天涯、闖入山妖國度、遠赴摩洛哥與埃及發財冒險，最終在垂垂老矣時被摯愛索爾維格（Solveig）的歌聲喚回、獲得救贖的故事。易卜生原本希望這齣戲能配上真正的挪威民間音樂質感，於是找上了當時聲望正盛的葛利格。</p>
+    <p>葛利格為全劇寫了超過 20 段配樂，後來從中挑選出最精華的段落，編成《皮爾金第一號組曲》Op.46 與《第二號組曲》Op.55，成為音樂會上最常被演奏的葛利格作品，其中幾段甚至是古典音樂中最廣為人知的旋律之一：</p>
+    <table>
+      <tr><th>樂章</th><th>組曲</th><th>意象</th></tr>
+      <tr><td><strong>清晨情緒（Morning Mood）</strong></td><td>第一號組曲 第1曲</td><td>皮爾在北非沙漠中，音樂卻描繪出挪威峽灣清晨的日出光景</td></tr>
+      <tr><td><strong>奧賽之死（Åse's Death）</strong></td><td>第一號組曲 第2曲</td><td>皮爾母親奧賽臨終，僅用弦樂合奏寫成的哀傷慢板</td></tr>
+      <tr><td><strong>安妮特拉之舞（Anitra's Dance）</strong></td><td>第一號組曲 第3曲</td><td>阿拉伯風情的優雅舞曲，描寫貝都因酋長之女安妮特拉</td></tr>
+      <tr><td><strong>山大王的宮殿（In the Hall of the Mountain King）</strong></td><td>第一號組曲 第4曲</td><td>皮爾誤闖山妖國度，音樂由陰森緩慢逐漸加速至瘋狂高潮，是葛利格最著名的旋律</td></tr>
+      <tr><td><strong>索爾維格之歌（Solveig's Song）</strong></td><td>第二號組曲 第4曲</td><td>癡心等待皮爾一生的索爾維格所唱的思念之歌，全劇情感的終點</td></tr>
+    </table>
+    <div class="listen-card">
+      <h4>🎵 線上聆聽：皮爾金組曲</h4>
+      <div class="meta">柏林愛樂樂團（Berliner Philharmoniker）演出 · 指揮：Sakari Oramo</div>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/QCiQho5DzfY" title="Grieg: Peer Gynt / Oramo · Berliner Philharmoniker" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <figure>
+      <img src="images/peer-gynt-mountain-king_20260729_154922.png" alt="山大王的宮殿意象插圖，洞穴中山妖圍繞舞動">
+      <figcaption>「山大王的宮殿」意象：皮爾闖入山妖國度，音樂隨劇情逐漸加速升溫（AI 示意圖）</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="concerto" class="alt">
+  <div class="wrap">
+    <span class="tag">04 · 代表作 II</span>
+    <h2>a 小調鋼琴協奏曲 Op.16：25 歲的成名之作</h2>
+    <p>1868 年，年僅 25 歲的葛利格在丹麥度假時完成了他唯一的一首鋼琴協奏曲——<strong>a 小調鋼琴協奏曲</strong>。開頭定音鼓一聲滾奏、鋼琴隨即由高音急墜而下的和弦動機，是古典音樂史上辨識度最高的開場之一，據說也影響了後來拉赫曼尼諾夫等作曲家的協奏曲寫作手法。</p>
+    <p>這首協奏曲融合了德國浪漫主義的協奏曲架構（受舒曼 a 小調鋼琴協奏曲啟發）與挪威民謠風味的旋律語彙，首演後迅速獲得李斯特的公開讚賞——李斯特甚至在葛利格面前當場視奏全曲，並大聲讚嘆其中的挪威風格。這首曲子至今仍是全球音樂會與鋼琴比賽最常演出的協奏曲之一。</p>
+    <div class="listen-card">
+      <h4>🎵 線上聆聽：a 小調鋼琴協奏曲 Op.16</h4>
+      <div class="meta">鋼琴：郎朗（Lang Lang）</div>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/pfNvWmjtryQ" title="Lang Lang - Grieg Piano Concerto in A minor, Op. 16" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="violin">
+  <div class="wrap">
+    <span class="tag">05 · 常見誤解澄清</span>
+    <h2>其實沒有「葛利格小提琴協奏曲」——但有三首精彩的小提琴奏鳴曲</h2>
+    <div class="callout">
+      <span class="label">先說清楚</span>
+      <p>葛利格<strong>並未創作任何小提琴協奏曲</strong>，這是坊間常見的誤傳。他真正留下的小提琴代表作，是三首<strong>小提琴與鋼琴奏鳴曲</strong>，橫跨他創作生涯的不同階段，也常被視為他自己最珍視的室內樂作品——葛利格本人生前經常親自擔任鋼琴部分，與小提琴家在沙龍與音樂會上演出這幾首奏鳴曲。</p>
+    </div>
+    <table>
+      <tr><th>作品</th><th>年代</th><th>特色</th></tr>
+      <tr><td>第一號 F 大調 Op.8</td><td>1865 年，寫於哥本哈根</td><td>清新明亮，仍帶有較多德國浪漫樂派的影子</td></tr>
+      <tr><td>第二號 G 大調 Op.13</td><td>1867 年，寫於克里斯蒂安尼亞（今奧斯陸）</td><td>挪威民間舞曲節奏更為鮮明，色彩活潑</td></tr>
+      <tr><td>第三號 c 小調 Op.45</td><td>1887 年，寫於 Troldhaugen</td><td>葛利格本人自認最成熟的一首，情感濃烈、結構最為緊湊，是三首中最常被單獨演出的一首</td></tr>
+    </table>
+    <div class="listen-card">
+      <h4>🎵 線上聆聽：小提琴奏鳴曲第三號 c 小調 Op.45</h4>
+      <div class="meta">內嵌 YouTube 搜尋播放清單，可直接播放不同版本的演奏錄音</div>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed?listType=search&list=Grieg%20Violin%20Sonata%20No.3%20in%20C%20minor%20Op.45&rel=0" title="Grieg Violin Sonata No.3" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="troldhaugen" class="alt">
+  <div class="wrap">
+    <span class="tag">06 · 朝聖地</span>
+    <h2>Troldhaugen：葛利格博物館與他的湖畔小屋</h2>
+    <p>「Troldhaugen」意為「山妖之丘」，是葛利格夫婦 1885 年在卑爾根南郊 Hop 湖畔建造的別墅，兩人在此定居直到 1907 年葛利格過世。1928 年，妮娜將別墅捐贈給卑爾根市，正式作為<strong>葛利格博物館（Edvard Grieg Museum）</strong>對外開放，如今由卑爾根公立美術館機構 <strong>KODE</strong> 負責營運管理。</p>
+    <figure>
+      <img src="images/troldhaugen-villa_20260729_154817.png" alt="Troldhaugen 別墅外觀示意圖，被森林與湖泊環繞">
+      <figcaption>Troldhaugen 別墅：葛利格夫婦 1885 年建成的湖畔木造住宅（AI 示意圖）</figcaption>
+    </figure>
+    <p>博物館園區主要由三部分組成：</p>
+    <ul>
+      <li><strong>別墅本體</strong>——保留葛利格生前的起居空間、鋼琴與私人物品，重現他晚年的生活樣貌；</li>
+      <li><strong>作曲小屋（Komponisthytten）</strong>——一間僅容一人的紅色小木屋，緊貼湖岸而建，葛利格習慣獨自躲進這裡專心譜曲，避免家中訪客打擾；</li>
+      <li><strong>現代展館與音樂廳 Troldsalen</strong>——附設咖啡廳與可俯瞰湖景的音樂廳，夏季每天都有現場音樂會演出葛利格的作品。</li>
+    </ul>
+    <figure>
+      <img src="images/composers-hut_20260729_154846.png" alt="湖邊紅色作曲小屋示意圖">
+      <figcaption>作曲小屋：葛利格獨自譜寫靈感的湖畔一隅（AI 示意圖）</figcaption>
+    </figure>
+    <p>葛利格夫婦過世後，兩人的骨灰分別安放於別墅旁面對湖面的岩壁墓穴中——這也是葛利格生前親自選定的長眠之處，如今是樂迷造訪時最常駐足致意的角落。</p>
+    <figure>
+      <img src="images/grieg-grave-cliff_20260729_155015.png" alt="峽灣岩壁上的墓穴示意圖，俯瞰湖面">
+      <figcaption>岩壁墓穴：葛利格與妮娜長眠於此，俯瞰他們共度一生的湖景（AI 示意圖）</figcaption>
+    </figure>
+    <div class="callout">
+      <span class="label">參觀資訊</span>
+      <p>Troldhaugen 位於卑爾根市區南方約 8 公里的 Hop，距市中心車程或大眾運輸約 20–30 分鐘，全年開放（冬季部分時段休館），夏季旺季每日均有音樂會場次。詳細開放時間、票價與交通方式請以官方網站公告為準：</p>
+      <a class="btn-link" href="https://www.kodebergen.no/en/museums/troldhaugen" target="_blank" rel="noopener">前往 Troldhaugen 官方網站（KODE Bergen）↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="wrap">
+    <span class="tag">07 · 遺產</span>
+    <h2>一位「地方性」作曲家，如何寫出世界性的旋律</h2>
+    <p>葛利格終其一生幾乎只以峽灣、民謠與家鄉風景為創作核心，柴可夫斯基曾稱讚他的音樂「像北歐的空氣一樣清新」；德布西則從他的和聲用法中，看見了後來印象樂派對色彩與氛圍的追求方向。他也是史上第一批被大量錄製唱片（愛迪生留聲機時代）並留下自己演奏紀錄的重要作曲家之一。</p>
+    <p>今日，卑爾根每年夏天舉辦以他為名的<strong>國際葛利格音樂節（Festspillene i Bergen）</strong>，Troldhaugen 也持續作為活躍的音樂廳與朝聖景點，讓這位「峽灣之子」的旋律，繼續在他最深愛的家鄉山水之間迴響。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    葛利格生平與作品整理筆記 · 文字整理自公開生平與音樂史資料 · 插圖為 AI 生成示意圖，僅供閱讀情境參考 · 內嵌影音為 YouTube 公開搜尋結果，版權歸原上傳者所有<br>
+    行程對應：北歐四國 15 日行程 Day 11 卑爾根 · <a href="https://maskywg.github.io/northeurope/北歐四國" target="_blank" rel="noopener">回到北歐四國主行程網頁 ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>
